@@ -2,14 +2,14 @@
 
 const Controller = require('egg').Controller;
 
-class BlogController extends Controller {
+class FileController extends Controller {
   async index() {
     const { ctx } = this;
     ctx.body = 'hi, egg';
   }
   async show() {
     const { ctx } = this;
-    ctx.body = await ctx.service.blog.single(ctx.params.id);
+    ctx.body = 'hi, show' + ctx.params.id;
   }
   async create() {
     const { ctx } = this;
@@ -25,4 +25,4 @@ class BlogController extends Controller {
   }
 }
 
-module.exports = BlogController;
+module.exports = FileController;
